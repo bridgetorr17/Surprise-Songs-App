@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eras Tour Surprise Songs</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Surprise Songs at the Eras Tour</h1>
+        <button id="popup">ABOUT</button>
+        <div id="overlay"></div>
+        <section id="popupInfo" >
+            <div id="popupContainer">
+                <img id="popupClose" src="/images/close.jpg" alt="Close">
+                <img id="taylorGuitar" src="/images/taylor.jpg.webp" alt="Taylor Swift with guitar at Eras tour">
+                <p>Taylor Swift's Eras Tour visited five continents, had 149 shows, and spanned nearly 2 years. 
+                The setlist included 44 songs and performances from Taylor's prolific career. 
+                <br><br>
+                Even with such an extensive setlist, Taylor had 100s of songs in her discography to perform. Because of 
+                this, she created an acoustic portion of the show that included two unique songs each night, first on the 
+                guitar and then the piano. The acoustic songs included album songs not on the usual setlist, 
+                mashups of fan favorites and even duets with surprise guests.
+                <br><br>
+                The "Surprise Song" portion of the show quickly became one of the most loved and watched. Taylor often gave anecdotes 
+                before playing songs and slipped in subtle details not in the recored versions. Among the Swifite community, Eras tour
+                dates are discussed based on the surprise songs that were played at that show. This page gives Swifties the ability to add
+                the songs that were played at their show, and rank the combinations played during the duration of the tour. 
+                </p>
+            </div>
+        </section>
+    </header>
+    <main>
+        <div class="flex1">
+            <section class="flex1 border">
+                <h2>Add the Surprise Songs from your Concert</h2>
+                <form action="/addConcert" method="POST">
+                    <fieldset class="flex2">
+                        <label for="guitarSong"><img src="/images/guitar.png" alt="Guitar Song(s)"></label>
+                        <input type="text" name="guitarSong" placeholder="Guitar Song(s)">
+                    </fieldset>
+                    <fieldset class="flex2">
+                        <label for="pianoSong"><img src="/images/piano.png" alt="Piano Song(s)"></label>
+                        <input type="text" name="pianoSong" placeholder="Piano Song(s)">
+                    </fieldset>
+                    <fieldset class="flex2">
+                        <label for="concertName"><img src="/images/mic.png" alt="Concert"></label>
+                        <input type="text" name="concertName" placeholder="Which Concert?">
+                    </fieldset>
+                    <fieldset>
+                        <button id="submit">Add Songs</button>
+                    </fieldset>
+                </form>
+            </section>
+            <section class="flex1 border">
+                <h2>Vote On your Favorite Surprise Song Combination</h2>
+                <!--.ejs for voting based on suprise songs-->
+                <!-- <ul id="concertListRanked">
+                    <% for(let i=0; i < concerts.length; i++){%>
+                        <li class="flex2">
+                            <section class="flex1 concertLeft">
+                                <h4><%= concerts[i].concertName %></h4>
+                                <span><%= concerts[i].guitarSong %></span>
+                                <span><%= concerts[i].pianoSong %></span>
+                            </section>
+                            <section class="flex2 concertRight">
+                                <img id="<%=concerts[i].concertName%>" class="likeButton" src="/images/hearts.png" alt="like button">
+                                <span id="<%= concerts[i].concertName.replace(/\s+/g, '_') %>_votes" class="bold"><%= concerts[i].votes %></span>
+                            </section>
+                        </li>
+                    <% } %>
+                </ul> -->
+            </section>
+            <!-- <section class="flex3 border">
+                <h2>Suprise Songs Votes, by the Album</h2>
+                .ejs for listing suprise songs by the album
+            </section> -->
+        </div>
+    </main>
+    <script src="/main.js"></script>
+</body>
+</html>

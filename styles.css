@@ -1,0 +1,177 @@
+/*
+PAGE
+*/
+main{
+    background-image: url(/images/background.jpg);
+}
+
+.clearfix{
+    overflow: auto;
+}
+/*
+LAYOUTS
+*/
+div{
+    width: 100%;
+}
+
+header{
+    width: 100%;
+    background: linear-gradient(pink, rgb(220, 3, 220));
+    color: rgb(84, 34, 141);
+    text-align: center
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form > fieldset{
+    width: 100%;
+    padding: 0.5rem;
+    border: 0px solid black;
+}
+
+form, ul{
+    max-width: 80rem;
+    align-self: center;
+}
+
+/*
+FLEX
+*/
+.flex1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.flex1 .concertLeft{
+    text-align: start;
+}
+
+.flex2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*
+MEDIA
+*/
+
+img{
+    width: 3rem;
+    margin: 1rem;
+}
+
+button{
+    width: 100%;
+    background-color: rgb(205, 43, 226);
+    color: rgb(255, 255, 255);
+    border: 0.25rem solid rgb(188, 118, 218);
+    border-radius: 1rem;;
+}
+
+.likeButton {
+    cursor: pointer;
+    transition: transform 0.1s ease-in-out;
+}
+
+.likeButton:hover {
+    transform: scale(1.5);
+}
+
+/*
+TEXT
+*/
+h2{
+    color: rgb(116, 0, 116);
+}
+
+h4{
+    margin: 0;
+}
+
+.border{
+    border-radius: 1rem;
+    background: linear-gradient(pink, rgb(116, 0, 116));
+}
+
+li{
+    list-style: none;
+}
+
+input{
+    border-radius: 0.5rem;
+    border: 0.25rem solid rgb(188, 118, 218);
+}
+
+.bold{
+    font-weight: 700;
+}
+
+/*
+POPUP
+*/
+#popupInfo{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+#popupContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#popup{
+    width: 20%;
+    margin: 0 0 1rem 0 ;
+    background-color: rgb(245, 116, 207);
+    color:rgb(84, 34, 141);
+}
+
+#taylorGuitar{
+    width: 70%;
+    border-radius: 5%;
+}
+
+#popupClose{
+    align-self: flex-end;
+    width: 1rem;
+}
+
+#popupClose:hover {
+    transform: scale(1.5);
+}
