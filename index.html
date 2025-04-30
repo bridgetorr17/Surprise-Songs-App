@@ -35,7 +35,7 @@
         <div class="flex1">
             <section class="flex1 border">
                 <h2>Add the Surprise Songs from your Concert</h2>
-                <form action="/addConcert" method="POST">
+                <form id="concertForm">
                     <fieldset class="flex2">
                         <label for="guitarSong"><img src="/images/guitar.png" alt="Guitar Song(s)"></label>
                         <input type="text" name="guitarSong" placeholder="Guitar Song(s)">
@@ -58,22 +58,6 @@
                 <ul id="concertListRanked">
 
                 </ul>
-                <!--.ejs for voting based on suprise songs-->
-                <!-- <ul id="concertListRanked">
-                    <% for(let i=0; i < concerts.length; i++){%>
-                        <li class="flex2">
-                            <section class="flex1 concertLeft">
-                                <h4><%= concerts[i].concertName %></h4>
-                                <span><%= concerts[i].guitarSong %></span>
-                                <span><%= concerts[i].pianoSong %></span>
-                            </section>
-                            <section class="flex2 concertRight">
-                                <img id="<%=concerts[i].concertName%>" class="likeButton" src="/images/hearts.png" alt="like button">
-                                <span id="<%= concerts[i].concertName.replace(/\s+/g, '_') %>_votes" class="bold"><%= concerts[i].votes %></span>
-                            </section>
-                        </li>
-                    <% } %>
-                </ul> -->
             </section>
             <!-- <section class="flex3 border">
                 <h2>Suprise Songs Votes, by the Album</h2>
