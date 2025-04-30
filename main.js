@@ -8,12 +8,51 @@
 //     console.error(error);
 // }
 try{
-    fetch("http://localhost:8000/")
+    fetch("https://surprise-songs.vercel.app/")
     .then(response => response.json())
     .then(data => {
         console.log(data);
-
+        let list = document.getElementById('concertListRanked');
         //add concert data from mongo to the DOM with javascript 
+        data.forEach((concert, index) => {
+            let li = document.createElement('li');
+            li.setAttribute('class', 'flex2');
+            list.appendChild(li);
+
+            let sec1 = document.createElement('section');
+            sec1.setAttribute('class', 'flex1 concertLeft');
+            li.appendChild(sec1);
+            
+            let h4 = document.createElement('h4');
+            h4.innerHTML = concert.concertName;
+            sec1.appendChild(h4);
+
+            let span1 = document.createElement('span');
+            span1.innerHTML = concert.guitarSong;
+            sec1.appendChild(span1);
+
+            let span2 = document.createElement('span');
+            span2.innerHTML = concert.pianoSong;
+            sec1.appendChild(span2);
+
+            let sec2 = document.createElement('section');
+            sec2.setAttribute('class', 'flex2 concertRight');
+            li.appendChild(sec2);
+
+            let img = document.createElement('img');
+            img.setAttribute('id', concert.concertName);
+            img.setAttribute('class', 'likeButton');
+            img.setAttribute('src', '/images/hearts.png');
+            img.setAttribute('alt', 'like button');
+            sec2.appendChild(img);
+
+            let span3 = document.createElement('span');
+            span3.setAttribute('id', concert.concertName.replace(/\s+/g, '_') + '_votes');
+            span3.setAttribute('class', 'bold');
+            span3.innerHTML = concert.votes;
+            sec2.appendChild(span3);
+        })
+    
     })
 }
 catch(error){
