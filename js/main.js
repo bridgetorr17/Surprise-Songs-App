@@ -114,7 +114,7 @@ function addElement(concert){
     let img = document.createElement('img');
     img.setAttribute('id', concert.concertName);
     img.setAttribute('class', 'likeButton');
-    img.setAttribute('src', 'images/hearts.png');
+    img.setAttribute('src', './images/hearts.png');
     img.setAttribute('alt', 'like button');
     sec2.appendChild(img);
 
