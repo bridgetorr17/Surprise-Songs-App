@@ -42,6 +42,7 @@ form > fieldset{
 form, ul{
     max-width: 80rem;
     align-self: center;
+    padding: 0;
 }
 
 /*
@@ -136,6 +137,7 @@ POPUP
     border-radius: 5%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    height: 80vh;
 }
 
 #overlay{
@@ -174,4 +176,31 @@ POPUP
 
 #popupClose:hover {
     transform: scale(1.5);
+}
+
+/*
+MOBILE
+*/
+@media screen and (max-width: 700px){
+    .flex1{
+        padding: 0;
+        margin: 0.5rem;
+    }
+
+    #concertForm{
+        width: 75%;
+    }
+
+    input{
+        width: 60%;
+    }
+    
+    ul{
+        padding: 0.75rem;
+    }
+
+    #popupInfo{
+        width: 80%;
+        overflow: scroll;
+    }
 }
