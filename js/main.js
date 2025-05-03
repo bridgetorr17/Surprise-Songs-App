@@ -14,7 +14,7 @@ popupClose.addEventListener('click', _ => {
 
 //get page from server
 try{
-        fetch("https://surprise-songs.vercel.app")
+        fetch('https://surprise-songs.vercel.app')
         .then(response => response.json())
         .then(data => {
             //add concert data already existing in the DB
@@ -53,14 +53,22 @@ document.getElementById('concertForm').addEventListener('submit', async function
             body: JSON.stringify(formDataObj)
         });
 
-        if(response.ok){
+        console.log(response);
+        if(response.status === 201){
+            
             formDataObj['votes'] = 0;
             document.getElementById('concertForm').reset();
             addElement(formDataObj);
 
             const button = document.querySelector('ul').querySelectorAll('img');
             buttonAdded = button[button.length-1]
-            addLikeButton(buttonAdded)
+            addLikeButton(buttonAdded);
+            document.querySelector('#additionMessage').innerHTML = "Thank you for the contribution! Your concert has been added to the list 🫶🏻"
+        }
+        else if (response.status === 200){
+            document.getElementById('concertForm').reset();
+            console.log('concert was already there');
+            document.querySelector('#additionMessage').innerHTML = "We already have that concert! Go ahead and vote for it down below ✨"
         }
     }
     catch(error){
