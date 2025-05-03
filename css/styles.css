@@ -138,6 +138,7 @@ POPUP
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
     height: 80vh;
+    overflow-y: scroll;
 }
 
 #overlay{
@@ -201,6 +202,5 @@ MOBILE
 
     #popupInfo{
         width: 80%;
-        overflow: scroll;
     }
 }
