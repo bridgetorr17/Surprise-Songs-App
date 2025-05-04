@@ -14,7 +14,7 @@ popupClose.addEventListener('click', _ => {
 
 //get page from server
 try{
-        fetch("https://surprise-songs.vercel.app")
+        fetch('https://surprise-songs.vercel.app')
         .then(response => response.json())
         .then(data => {
             //add concert data already existing in the DB
@@ -73,6 +73,7 @@ document.getElementById('concertForm').addEventListener('submit', async function
             document.getElementById('concertForm').reset();
             console.log('mistake in the input');
             document.querySelector('#additionMessage').innerHTML = "Looks like you had a typo or tried to put in an invalid song. Try again?"
+
         }
     }
     catch(error){
