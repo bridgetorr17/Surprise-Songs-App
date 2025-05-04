@@ -55,7 +55,6 @@ document.getElementById('concertForm').addEventListener('submit', async function
 
         console.log(response);
         if(response.status === 201){
-            
             formDataObj['votes'] = 0;
             document.getElementById('concertForm').reset();
             addElement(formDataObj);
@@ -69,6 +68,12 @@ document.getElementById('concertForm').addEventListener('submit', async function
             document.getElementById('concertForm').reset();
             console.log('concert was already there');
             document.querySelector('#additionMessage').innerHTML = "We already have that concert! Go ahead and vote for it down below ✨"
+        }
+        else if (response.status === 406){
+            document.getElementById('concertForm').reset();
+            console.log('mistake in the input');
+            document.querySelector('#additionMessage').innerHTML = "Looks like you had a typo or tried to put in an invalid song. Try again?"
+
         }
     }
     catch(error){
